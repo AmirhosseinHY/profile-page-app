@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,8 +40,55 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: Text('hello world')
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: const Text('Curriculum Vitae'),
+        actions: [
+          Icon(CupertinoIcons.chat_bubble),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 0, 16, 0),
+            child: Icon(CupertinoIcons.ellipsis_vertical),
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(32),
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset(
+                    'assets/images/profile_image.png',
+                    width: 60,
+                    height: 60,
+                  ),
+                ),
+                SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Brice Séraphin'),
+                    Text('Product & Print Designer'),
+                    Row(
+                      children: [
+                        Icon(CupertinoIcons.location),
+                        Text('Paris, France'),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(32, 0, 32, 16),
+            child: Text(
+              'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.',
+            ),
+          ),
+        ],
       ),
     );
   }
