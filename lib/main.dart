@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +30,21 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primaryColor: Colors.pink.shade400,
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: Color.fromARGB(255, 30, 30, 30),
+        appBarTheme: AppBarTheme(backgroundColor: Colors.black),
+        textTheme: GoogleFonts.latoTextTheme(
+          TextTheme(
+            //bodyMedium: TextStyle(fontSize: 15),
+            bodySmall: TextStyle(
+              fontSize: 13,
+              color: Color.fromARGB(200, 255, 255, 255),
+            ),
+            titleLarge: TextStyle(fontWeight: FontWeight.w900),
+            labelLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+        ),
       ),
       home: MyHomePage(),
     );
@@ -41,7 +56,6 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
         title: const Text('Curriculum Vitae'),
         actions: [
           Icon(CupertinoIcons.chat_bubble),
@@ -66,18 +80,36 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 16),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Brice Séraphin'),
-                    Text('Product & Print Designer'),
-                    Row(
-                      children: [
-                        Icon(CupertinoIcons.location),
-                        Text('Paris, France'),
-                      ],
-                    ),
-                  ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Brice Séraphin',
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                      Text('Product & Print Designer'),
+                      SizedBox(height: 6),
+                      Row(
+                        children: [
+                          Icon(
+                            CupertinoIcons.location,
+                            size: 14,
+                            color: Theme.of(context).textTheme.bodySmall!.color,
+                          ),
+                          SizedBox(width: 4),
+                          Text(
+                            'Paris, France',
+                            style: Theme.of(context).textTheme.labelSmall,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Icon(
+                  CupertinoIcons.heart,
+                  color: Theme.of(context).primaryColor,
                 ),
               ],
             ),
@@ -86,8 +118,10 @@ class MyHomePage extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(32, 0, 32, 16),
             child: Text(
               'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.',
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ),
+          Divider(),
         ],
       ),
     );
