@@ -66,6 +66,7 @@ class MyHomePage extends StatelessWidget {
         ],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(32),
@@ -122,6 +123,120 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           Divider(),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(32, 16, 32, 12),
+            child: Row(
+              children: [
+                Text('Skills', style: TextStyle(fontWeight: FontWeight.w900)),
+                SizedBox(width: 4),
+                Icon(CupertinoIcons.chevron_down, size: 12),
+              ],
+            ),
+          ),
+          Center(
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              direction: Axis.horizontal,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0x0dffffff),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  width: 110,
+                  height: 110,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/app_icon_01.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      Text('Photoshop'),
+                    ],
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0x0dffffff),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  width: 110,
+                  height: 110,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/app_icon_01.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      Text('Photoshop'),
+                    ],
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0x0dffffff),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  width: 110,
+                  height: 110,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/app_icon_01.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      Text('Photoshop'),
+                    ],
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0x0dffffff),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  width: 110,
+                  height: 110,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/app_icon_01.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      Text('Photoshop'),
+                    ],
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0x0dffffff),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  width: 110,
+                  height: 110,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/app_icon_01.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      Text('Photoshop'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
