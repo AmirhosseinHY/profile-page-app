@@ -51,7 +51,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+enum _Skills { photoshop, adobeXD, illustrator, afterEffect, lightroom }
+
+class _MyHomePageState extends State<MyHomePage> {
+  _Skills? _skill;
+
+  void updateSkill(_Skills skillType) {
+    setState(() {
+      _skill = skillType;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,117 +142,123 @@ class MyHomePage extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(32, 16, 32, 12),
             child: Row(
               children: [
-                Text('Skills', style: TextStyle(fontWeight: FontWeight.w900)),
+                Text(
+                  'Skills',
+                  style: TextStyle(fontWeight: FontWeight.w900, fontSize: 15),
+                ),
                 SizedBox(width: 4),
                 Icon(CupertinoIcons.chevron_down, size: 12),
               ],
             ),
           ),
+          SizedBox(height: 12),
           Center(
             child: Wrap(
+              direction: Axis.horizontal,
               spacing: 8,
               runSpacing: 8,
-              direction: Axis.horizontal,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color(0x0dffffff),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 110,
-                  height: 110,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/app_icon_01.png',
-                        width: 40,
-                        height: 40,
-                      ),
-                      Text('Photoshop'),
-                    ],
-                  ),
+                Skill(
+                  title: 'Photoshop',
+                  imagePath: 'assets/images/app_icon_01.png',
+                  shadowColor: Colors.blue,
+                  isActive: _skill == _Skills.photoshop,
+                  onTap: () {
+                    updateSkill(_Skills.photoshop);
+                  },
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color(0x0dffffff),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 110,
-                  height: 110,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/app_icon_01.png',
-                        width: 40,
-                        height: 40,
-                      ),
-                      Text('Photoshop'),
-                    ],
-                  ),
+                Skill(
+                  title: 'Adobe XD',
+                  imagePath: 'assets/images/app_icon_05.png',
+                  shadowColor: Colors.pink,
+                  isActive: _skill == _Skills.adobeXD,
+                  onTap: () {
+                    updateSkill(_Skills.adobeXD);
+                  },
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color(0x0dffffff),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 110,
-                  height: 110,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/app_icon_01.png',
-                        width: 40,
-                        height: 40,
-                      ),
-                      Text('Photoshop'),
-                    ],
-                  ),
+                Skill(
+                  title: 'Illustrator',
+                  imagePath: 'assets/images/app_icon_04.png',
+                  shadowColor: Colors.orange,
+                  isActive: _skill == _Skills.illustrator,
+                  onTap: () {
+                    updateSkill(_Skills.illustrator);
+                  },
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color(0x0dffffff),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 110,
-                  height: 110,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/app_icon_01.png',
-                        width: 40,
-                        height: 40,
-                      ),
-                      Text('Photoshop'),
-                    ],
-                  ),
+                Skill(
+                  title: 'After Effect',
+                  imagePath: 'assets/images/app_icon_03.png',
+                  shadowColor: Colors.blue.shade800,
+                  isActive: _skill == _Skills.afterEffect,
+                  onTap: () {
+                    updateSkill(_Skills.afterEffect);
+                  },
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color(0x0dffffff),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 110,
-                  height: 110,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/app_icon_01.png',
-                        width: 40,
-                        height: 40,
-                      ),
-                      Text('Photoshop'),
-                    ],
-                  ),
+                Skill(
+                  title: 'Lightroom',
+                  imagePath: 'assets/images/app_icon_02.png',
+                  shadowColor: Colors.blue,
+                  isActive: _skill == _Skills.lightroom,
+                  onTap: () {
+                    updateSkill(_Skills.lightroom);
+                  },
                 ),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class Skill extends StatelessWidget {
+  final String title;
+  final String imagePath;
+  final Color shadowColor;
+  final bool isActive;
+  final Function() onTap;
+
+  const Skill({
+    super.key,
+    required this.title,
+    required this.imagePath,
+    required this.shadowColor,
+    required this.isActive,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: onTap,
+      child: Container(
+        decoration: isActive
+            ? BoxDecoration(
+                color: Color(0x0dffffff),
+                borderRadius: BorderRadius.circular(12),
+              )
+            : null,
+        width: 110,
+        height: 110,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              decoration: isActive
+                  ? BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(color: shadowColor, blurRadius: 20),
+                      ],
+                    )
+                  : null,
+              child: Image.asset(imagePath, width: 40, height: 40),
+            ),
+            SizedBox(height: 8),
+            Text(title),
+          ],
+        ),
       ),
     );
   }
