@@ -23,9 +23,11 @@ This app is created as a personal learning exercise to understand and practice:
 
 ## 📸 Screenshots
 
-| Dark Theme | Light Theme |
-|------------|-------------|
+| Dark Theme (English) | Light Theme (English) |
+|----------------------|-----------------------|
 | <img src="screenshots/Screenshot1.png" alt="English Dark" width="300"/> | <img src="screenshots/Screenshot2.png" alt="English Light" width="300"/> |
+| Dark Theme (Persian) | Light Theme (Persian) |
+|----------------------|-----------------------|
 | <img src="screenshots/Screenshot3.png" alt="Persian Dark" width="300"/> | <img src="screenshots/Screenshot4.png" alt="Persian Light" width="300"/> |
 
 ## 📦 Download APK
