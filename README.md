@@ -1,16 +1,41 @@
-# profile_page_app
+# Flutter UI (Dark & Light Theme + Localization)
 
-A new Flutter project.
+This is a simple Flutter project built for learning purposes. It demonstrates how to implement **Dark and Light themes** and **Internationalization (i18n)** in a real-world UI context.
 
-## Getting Started
+## 📱 Features
 
-This project is a starting point for a Flutter application.
+- 🎨 **Dark & Light Theme** toggle (accessible via the top-right menu)
+- 🌐 **Localization** support (English & Persian) with easy language switching
+- 🧑‍💻 User profile page showcasing:
+    - Personal Info
+    - Selectable skills with visual icons
+    - Input fields (Email, Password)
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Purpose of the Project
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This app is created as a personal learning exercise to understand and practice:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter theming and theme switching
+- Internationalization (i18n) and localization (l10n) setup
+- Building a structured and responsive UI
+
+> Note: This app is not intended for production. It's purely for practice and experimentation.
+
+## 📸 Screenshots
+
+| Dark Theme | Light Theme |
+|------------|-------------|
+| ![English Dark](screenshots/screenshot1.png) | ![English Light](screenshots/screenshot2.png) |
+| ![Persian Dark](screenshots/screenshot3.png) | ![Persian Light](screenshots/screenshot4.png) |
+
+## 📦 Download APK
+
+You can download the latest APK version from the Releases section:
+
+➡️ [Download APK](https://github.com/AmirhosseinHY/profile-page-app/releases)
+
+## 🚀 Getting Started
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/AmirhosseinHY/profile-page-app.git
