@@ -25,8 +25,8 @@ This app is created as a personal learning exercise to understand and practice:
 
 | Dark Theme | Light Theme |
 |------------|-------------|
-| ![English Dark](screenshots/screenshot1.png) | ![English Light](screenshots/screenshot2.png) |
-| ![Persian Dark](screenshots/screenshot3.png) | ![Persian Light](screenshots/screenshot4.png) |
+| ![English Dark]("screenshots/screenshot1.png") | ![English Light]("screenshots/screenshot2.png") |
+| ![Persian Dark]("screenshots/screenshot3.png") | ![Persian Light]("screenshots/screenshot4.png") |
 
 ## 📦 Download APK
 
